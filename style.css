@@ -1,0 +1,24 @@
+*{box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+body{margin:0;background:#f5f7fb;color:#111}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.login-card,.dashboard{background:#fff;padding:24px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.08);margin-top:20px}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tab{padding:8px 14px;border:1px solid #ddd;border-radius:20px;background:#f3f3f3;cursor:pointer}
+.tab.active{background:#111;color:#fff}
+.input-group{margin-bottom:12px}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;margin-top:4px}
+textarea{min-height:60px}
+.pass-wrap{position:relative;display:flex;align-items:center}
+.pass-wrap .eye{position:absolute;right:10px;cursor:pointer;user-select:none}
+.btn{padding:10px 16px;border:none;border-radius:8px;cursor:pointer;margin:4px}
+.btn.primary{background:#111;color:#fff}
+.btn.ghost{background:#eee}
+.btn.danger{background:#ff3b30;color:#fff}
+.hidden{display:none}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.nav button{padding:8px 12px;border:1px solid #ddd;background:#fafafa;border-radius:8px;cursor:pointer}
+.section{margin-top:16px;padding:16px;border:1px solid #eee;border-radius:12px;background:#fafafa}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left;font-size:14px}
+.quiz-q{padding:12px;background:#fff;border-radius:8px;margin-bottom:10px;border:1px solid #eee}
+.hint{font-size:12px;color:#666;margin-top:10px}
