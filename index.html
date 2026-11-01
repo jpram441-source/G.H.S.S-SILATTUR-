@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Portal - Login</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="login-card" id="loginCard">
+<h1>School Login</h1>
+<div class="tabs">
+<button class="tab active" data-role="owner">Owner</button>
+<button class="tab" data-role="teacher">Teacher</button>
+<button class="tab" data-role="student">Student</button>
+</div>
+<form id="loginForm">
+<div class="input-group">
+<label id="idLabel">Owner ID</label>
+<input type="text" id="loginId" required placeholder="Enter ID / EMIS No">
+</div>
+<div class="input-group">
+<label>Password</label>
+<div class="pass-wrap">
+<input type="password" id="loginPass" required placeholder="Enter Password">
+<span class="eye" onclick="toggleEye('loginPass', this)">👁️</span>
+</div>
+</div>
+<button type="submit" class="btn primary">Login</button>
+<div class="links">
+<a href="#" onclick="showForgot()">Forgot Password?</a>
+</div>
+</form>
+<div id="forgotBox" class="hidden">
+<h3>Reset Password</h3>
+<select id="forgotRole"><option value="owner">Owner</option><option value="teacher">Teacher</option><option value="student">Student</option></select>
+<input type="text" id="forgotId" placeholder="Enter ID / EMIS">
+<input type="password" id="forgotNewPass" placeholder="New Password">
+<div class="pass-wrap"><span class="eye" onclick="toggleEye('forgotNewPass', this)">👁️</span></div>
+<button class="btn primary" onclick="doForgot()">Submit</button>
+<button class="btn ghost" onclick="hideForgot()">Back to Login</button>
+</div>
+<p class="hint">Default Owner: owner / owner123</p>
+</div>
+
+<div id="ownerDash" class="dashboard hidden"><h2>Owner Dashboard</h2><button class="btn ghost" onclick="logout()">Logout</button><div class="nav"><button onclick="showSection('createUserSec')">Create Users</button><button onclick="showSection('manageUsersSec')">Manage Students & Teachers</button><button onclick="showSection('assignSec')">Assignments</button><button onclick="showSection('quizSec')">Quiz</button><button onclick="showSection('bookSec')">Book PDF</button></div><div id="createUserSec" class="section"><h3>Create User - ID Password</h3><form id="createUserForm"><select id="newRole" required><option value="">Select Role</option><option value="teacher">Teacher</option><option value="student">Student</option><option value="owner">Owner</option></select><input type="text" id="newId" required placeholder="ID (for student use EMIS No)"><input type="text" id="newName" required placeholder="Full Name"><select id="newClass" required></select><input type="text" id="newSubject" placeholder="Subject (for teacher)"><div class="pass-wrap"><input type="password" id="newPass" required placeholder="Password"><span class="eye" onclick="toggleEye('newPass', this)">👁️</span></div><button type="submit" class="btn primary">Submit</button></form></div><div id="manageUsersSec" class="section hidden"></div><div id="assignSec" class="section hidden"></div><div id="quizSec" class="section hidden"></div><div id="bookSec" class="section hidden"></div></div>
+
+<div id="teacherDash" class="dashboard hidden"><h2>Teacher Dashboard - <span id="teacherName"></span></h2><button class="btn ghost" onclick="logout()">Logout</button><div class="nav"><button onclick="showTeacherSection('tCreateStudent')">Add Student</button><button onclick="showTeacherSection('tManage')">Manage Students</button><button onclick="showTeacherSection('tAssign')">Assignments</button><button onclick="showTeacherSection('tQuiz')">Quiz</button><button onclick="showTeacherSection('tBook')">Book PDF</button></div><div id="tCreateStudent" class="section"></div><div id="tManage" class="section hidden"></div><div id="tAssign" class="section hidden"></div><div id="tQuiz" class="section hidden"></div><div id="tBook" class="section hidden"></div></div>
+
+<div id="studentDash" class="dashboard hidden"><h2>Student Dashboard - <span id="studentName"></span> (<span id="studentClass"></span>)</h2><button class="btn ghost" onclick="logout()">Logout</button><div class="nav"><button onclick="showStudentSection('sAssign')">Assignments</button><button onclick="showStudentSection('sQuiz')">Weekly Quiz</button></div><div id="sAssign" class="section"></div><div id="sQuiz" class="section hidden"></div></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
