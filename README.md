@@ -1,1 +1,0 @@
-# G.H.S.S-SILATTUR-
